@@ -35,7 +35,6 @@ const plans = [
     ],
     cta: "Start Free Trial",
     highlighted: true,
-    badge: "Most popular",
   },
   {
     name: "Team",
@@ -87,14 +86,8 @@ export default function Pricing() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <p className="text-sm text-accent font-mono uppercase tracking-wider mb-3">
-              Pricing
-            </p>
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
-              Free during{" "}
-              <span className="font-display italic font-normal text-muted">
-                beta
-              </span>
+              Free during beta
             </h1>
             <p className="mt-4 text-muted text-lg max-w-md mx-auto">
               Early users will get a lifetime discount when we launch paid
@@ -110,20 +103,12 @@ export default function Pricing() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 + 0.2, duration: 0.5 }}
-                className={`relative rounded-2xl p-6 border transition-all duration-300 ${
+                className={`relative rounded-2xl p-6 border ${
                   plan.highlighted
-                    ? "bg-surface border-accent/30 shadow-lg shadow-accent/5"
-                    : "bg-surface border-border hover:border-border-hover"
+                    ? "bg-surface border-accent/30"
+                    : "bg-surface border-border hover:border-border-hover transition-colors"
                 }`}
               >
-                {plan.badge && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="px-3 py-1 rounded-full text-xs font-medium bg-accent text-white shadow-md shadow-accent/20">
-                      {plan.badge}
-                    </span>
-                  </div>
-                )}
-
                 <div className="mb-6">
                   <p className="text-sm font-medium text-muted mb-2">
                     {plan.name}
@@ -167,10 +152,10 @@ export default function Pricing() {
 
                 <a
                   href="#"
-                  className={`block text-center py-3 px-4 rounded-xl text-sm font-medium transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${
+                  className={`block text-center py-3 px-4 rounded-xl text-sm font-medium transition-colors ${
                     plan.highlighted
-                      ? "bg-accent text-white shadow-[0_0_20px_rgba(99,102,241,0.2)] hover:shadow-[0_0_30px_rgba(99,102,241,0.35)]"
-                      : "bg-surface-raised border border-border hover:border-border-hover text-foreground"
+                      ? "bg-accent text-white hover:bg-accent-hover"
+                      : "border border-border hover:border-border-hover text-foreground"
                   }`}
                 >
                   {plan.cta}

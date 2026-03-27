@@ -3,9 +3,9 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer id="contact" className="relative pt-16 pb-12 px-6">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      <div className="border-t border-border" />
 
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto pt-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-14">
           {/* Brand */}
           <div className="sm:col-span-2 md:col-span-1">
@@ -27,8 +27,7 @@ export default function Footer() {
               <span className="text-sm font-semibold">Neuro</span>
             </div>
             <p className="text-sm text-muted leading-relaxed max-w-xs">
-              Focus tracking and productivity for macOS. Built for people who
-              care about doing their best work.
+              Focus tracking and productivity for macOS.
             </p>
           </div>
 
@@ -152,9 +151,6 @@ export default function Footer() {
         <div className="pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted/50">
             &copy; {new Date().getFullYear()} Neuro. All rights reserved.
-          </p>
-          <p className="text-xs text-muted/40">
-            Crafted for people who focus.
           </p>
         </div>
       </div>

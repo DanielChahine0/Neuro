@@ -1,115 +1,30 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Badge from "./Badge";
 
-const stagger = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.08, delayChildren: 0.1 },
-  },
-};
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
-};
-
 export default function Hero() {
-  const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
-
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      setMousePos({
-        x: (e.clientX / window.innerWidth) * 100,
-        y: (e.clientY / window.innerHeight) * 100,
-      });
-    };
-    window.addEventListener("mousemove", handler);
-    return () => window.removeEventListener("mousemove", handler);
-  }, []);
-
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-16 overflow-hidden">
-      {/* Mouse-reactive gradient */}
-      <div
-        className="absolute inset-0 pointer-events-none transition-opacity duration-1000"
-        style={{
-          background: `radial-gradient(800px circle at ${mousePos.x}% ${mousePos.y}%, rgba(99, 102, 241, 0.06), transparent 40%)`,
-        }}
-      />
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-16">
+      <div className="relative z-10 flex flex-col items-center text-center max-w-3xl">
+        <Badge>Coming soon for macOS</Badge>
 
-      {/* Ambient orbs */}
-      <div
-        className="absolute w-[700px] h-[700px] rounded-full blur-[140px] pointer-events-none opacity-50"
-        style={{
-          top: "30%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          background: "radial-gradient(circle, rgba(99, 102, 241, 0.08), transparent 70%)",
-          animation: "aurora 20s ease-in-out infinite",
-        }}
-      />
-      <div
-        className="absolute w-[400px] h-[400px] rounded-full blur-[120px] pointer-events-none"
-        style={{
-          top: "20%",
-          right: "15%",
-          background: "radial-gradient(circle, rgba(139, 92, 246, 0.04), transparent 70%)",
-          animation: "aurora 15s ease-in-out infinite reverse",
-        }}
-      />
-
-      {/* Dot grid */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-40"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
-        }}
-      />
-
-      {/* Content */}
-      <motion.div
-        variants={stagger}
-        initial="hidden"
-        animate="visible"
-        className="relative z-10 flex flex-col items-center text-center max-w-4xl"
-      >
-        <motion.div variants={fadeUp}>
-          <Badge>Neuro 1.0 for macOS</Badge>
-        </motion.div>
-
-        <motion.h1
-          variants={fadeUp}
-          className="mt-8 text-5xl sm:text-6xl lg:text-[5rem] font-bold tracking-tight leading-[1.05]"
-        >
-          <span className="text-transparent bg-clip-text bg-gradient-to-b from-foreground via-foreground to-foreground/50">
-            Stay focused.
-          </span>
+        <h1 className="mt-8 text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08]">
+          Stay focused.
           <br />
-          <span className="font-display italic text-muted font-normal">
-            Build better habits.
-          </span>
-        </motion.h1>
+          <span className="text-muted">Build better habits.</span>
+        </h1>
 
-        <motion.p
-          variants={fadeUp}
-          className="mt-6 text-lg sm:text-xl text-muted max-w-xl leading-relaxed"
-        >
-          Track your work sessions, detect distractions in real time, block
-          apps that steal your focus, and stay accountable — all from your
-          menu bar.
-        </motion.p>
+        <p className="mt-6 text-lg text-muted max-w-lg leading-relaxed">
+          Track your work sessions, detect distractions in real time, and block
+          the apps that pull you off task. Lives in your menu bar.
+        </p>
 
-        <motion.div variants={fadeUp} className="mt-10 flex flex-col sm:flex-row items-center gap-4">
+        <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
           <a
             href="#"
-            className="group relative inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-accent text-white text-sm font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_20px_rgba(99,102,241,0.25)] hover:shadow-[0_0_40px_rgba(99,102,241,0.4)]"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-accent text-white text-sm font-medium hover:bg-accent-hover transition-colors"
           >
-            <span className="absolute inset-0 rounded-xl bg-gradient-to-b from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             <svg
               width="16"
               height="16"
@@ -119,42 +34,34 @@ export default function Hero() {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="relative"
             >
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
-            <span className="relative">Download for Mac</span>
+            Download for Mac
           </a>
           <a
             href="#features"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-surface border border-border hover:border-border-hover text-sm font-medium text-muted hover:text-foreground transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-border hover:border-border-hover text-sm font-medium text-muted hover:text-foreground transition-colors"
           >
             See how it works
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
           </a>
-        </motion.div>
+        </div>
 
-        <motion.p variants={fadeUp} className="mt-5 text-xs text-muted/50">
+        <p className="mt-5 text-xs text-muted/50">
           Free during beta &middot; Requires macOS 14+
-        </motion.p>
-      </motion.div>
+        </p>
+      </div>
 
       {/* Hero mockup */}
       <motion.div
-        initial={{ opacity: 0, y: 60, scale: 0.95 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         className="relative z-10 mt-16 w-full max-w-4xl"
       >
-        {/* Glow behind the card */}
-        <div className="absolute -inset-4 bg-accent/5 rounded-3xl blur-2xl pointer-events-none" />
-
-        <div className="relative rounded-2xl border border-border bg-surface/60 backdrop-blur-sm p-1 shadow-2xl shadow-black/30">
+        <div className="rounded-2xl border border-border bg-surface p-1">
           <div className="rounded-xl bg-surface overflow-hidden">
             {/* Window chrome */}
             <div className="flex items-center gap-2 px-4 py-3 border-b border-border">
@@ -187,7 +94,7 @@ export default function Hero() {
                     94%
                   </p>
                   <p className="mt-1.5 text-sm text-emerald-400 flex items-center gap-1.5 justify-end">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                     Excellent focus
                   </p>
                 </div>
@@ -197,7 +104,7 @@ export default function Hero() {
                 {[20,26,31,29,23,17,16,20,26,31,29,23,17,16,20,26,31,29,23,17,16,20,26,31,29,23,17,16,20,26,31,29,23,17,16,20,26,31,29,23,17,16,20,26,31,29,23,17].map((h, i) => (
                   <div
                     key={i}
-                    className={`flex-1 rounded-[2px] transition-colors ${
+                    className={`flex-1 rounded-[2px] ${
                       [7, 8, 23, 24, 25, 38].includes(i)
                         ? "bg-red-500/40"
                         : "bg-accent/30"
