@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01C48934C2D733D908F27937 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E4721BC3526659C74F425A /* SignUpView.swift */; };
+		150B571278C96AD386193E09 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A059A52BF81F513E0F1EF4 /* FirebaseService.swift */; };
+		1AB5E48D167FBE9B6C78CCA8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FEF128130FF1244ED80178 /* Constants.swift */; };
+		2DBF26D6B2DAA8E5928C526A /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BE8E40EFCC96D3014146CA /* NotificationService.swift */; };
+		2FB6D7854BCBBD04C4E1D7DA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5A92D6E53E2B0911AA878 /* Extensions.swift */; };
+		3641D8B7AE62E7858D56903C /* SessionSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88770145A23B148A1597416B /* SessionSetupView.swift */; };
+		36C58D0DCAA14DF28EBBCCEB /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E0856F801B8DD5333E7778 /* SessionViewModel.swift */; };
+		4C2B2D95346D4DFC48ADFCAB /* FocusScoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79612E3964B2436759373021 /* FocusScoreService.swift */; };
+		5009E66945886D9B1E8328E2 /* StreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570C8AC05BCE9660AF972DA9 /* StreakView.swift */; };
+		5679CA3A0742001DBA463200 /* SocialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B30315AF5B4E7BA3F4C2C7 /* SocialViewModel.swift */; };
+		5B3520108E112B32F12C24EA /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51DF7CEC5D5CF73BECEEFF7 /* Friend.swift */; };
+		6C68D5D0ECEBE08984046A0F /* AppUsageRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B797E8AB2C5217A699E9A2B4 /* AppUsageRecord.swift */; };
+		758AE2CB268B0403F749CAE3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 144BA9DC785CA0493CDC4E73 /* FirebaseAuth */; };
+		75A7BEA4CCDF3E2D9AE88055 /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BD010D7FBC4FC0DDA0A013 /* StatsViewModel.swift */; };
+		793F583A6BCCBA51B107549D /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2B894881F653B4A792712D /* UserProfile.swift */; };
+		7AE491B6D484B1ED86EA6A0D /* project.yml in Resources */ = {isa = PBXBuildFile; fileRef = D6C0780A7EF5A46CF8D245C2 /* project.yml */; };
+		9552F6A8D800FF1D1119ABB4 /* BlockedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B9B1C90856D510D62E832E /* BlockedApp.swift */; };
+		9EF5AF3954E94B8A99AEA6EE /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACBEF1A90AAEA0C70ECF70B /* MenuBarView.swift */; };
+		A01F73E3C1A530680B1A9097 /* BlockedAppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F23DB26D8030CFEC761C70 /* BlockedAppsView.swift */; };
+		A041E1C4B08FB8A8D87069DE /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900F38F32B429F2FC3BB95B4 /* StatsView.swift */; };
+		A16BC037453DE7E048D25EE3 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3777E61A63C57118089697AF /* SettingsViewModel.swift */; };
+		A182263B648AA782D694AC93 /* NeuroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C318C64FE1A7CD765229E307 /* NeuroApp.swift */; };
+		A24C2FA6386B3B04E6C5074A /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D419FDC8F8C7F1CE6234FD31 /* AuthViewModel.swift */; };
+		BD1FFC59110A0F55287CCBA7 /* FocusSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E24B02FECCED9B2CD06369 /* FocusSession.swift */; };
+		BD8EDC72BC4BBDEDEC470394 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64696F76C9A461E5CCE4FBA /* LoginView.swift */; };
+		C4E581825283ABE66FD3238F /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A021300ED07A54F5A4DEEBAE /* SessionView.swift */; };
+		D317DA23EEBEF042D672752F /* AppMonitorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDECB2DEDA62926FB18F81E6 /* AppMonitorService.swift */; };
+		D32695D9BD7E76C082B47A95 /* SessionSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D2A1CB04ABD9DF22C03E4 /* SessionSummaryView.swift */; };
+		D71588679C3AA412E1E21E0D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 120D53C676FB5DCA5313F7A7 /* FirebaseFirestore */; };
+		E290BEA00F832A53C0AE2E7E /* FriendsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0600BFB5307CA0089B3E1C /* FriendsListView.swift */; };
+		E2CD43F1553A2635AA409F09 /* CompactTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D398157F5A2E0EF32272068D /* CompactTimerView.swift */; };
+		ECE076F251A26461C5A0C851 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678F4F922573D7EA5C01B01A /* SettingsView.swift */; };
+		F9DDA6C321CD608F9AF95E86 /* AppBlockerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA39CB500C9ACFEF203A0A9 /* AppBlockerService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		21B30315AF5B4E7BA3F4C2C7 /* SocialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialViewModel.swift; sourceTree = "<group>"; };
+		26E38ECD61A5E86B5DD3338F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3777E61A63C57118089697AF /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		570C8AC05BCE9660AF972DA9 /* StreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakView.swift; sourceTree = "<group>"; };
+		5A0600BFB5307CA0089B3E1C /* FriendsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListView.swift; sourceTree = "<group>"; };
+		5A0D25A88BC74799477AB68A /* Neuro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neuro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		678F4F922573D7EA5C01B01A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		79612E3964B2436759373021 /* FocusScoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusScoreService.swift; sourceTree = "<group>"; };
+		80A059A52BF81F513E0F1EF4 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		88770145A23B148A1597416B /* SessionSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSetupView.swift; sourceTree = "<group>"; };
+		8C2B894881F653B4A792712D /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		900F38F32B429F2FC3BB95B4 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		95B9B1C90856D510D62E832E /* BlockedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedApp.swift; sourceTree = "<group>"; };
+		9ACBEF1A90AAEA0C70ECF70B /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		A021300ED07A54F5A4DEEBAE /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
+		A0E0856F801B8DD5333E7778 /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
+		A8BD010D7FBC4FC0DDA0A013 /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
+		B797E8AB2C5217A699E9A2B4 /* AppUsageRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUsageRecord.swift; sourceTree = "<group>"; };
+		C0BE8E40EFCC96D3014146CA /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		C318C64FE1A7CD765229E307 /* NeuroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroApp.swift; sourceTree = "<group>"; };
+		C5F23DB26D8030CFEC761C70 /* BlockedAppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedAppsView.swift; sourceTree = "<group>"; };
+		C8E4721BC3526659C74F425A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		CD4D2A1CB04ABD9DF22C03E4 /* SessionSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSummaryView.swift; sourceTree = "<group>"; };
+		CE73B7EF4B3911DB7EBB3133 /* Neuro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Neuro.entitlements; sourceTree = "<group>"; };
+		D398157F5A2E0EF32272068D /* CompactTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactTimerView.swift; sourceTree = "<group>"; };
+		D419FDC8F8C7F1CE6234FD31 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		D51DF7CEC5D5CF73BECEEFF7 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		D64696F76C9A461E5CCE4FBA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D6C0780A7EF5A46CF8D245C2 /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = project.yml; sourceTree = "<group>"; };
+		DFA39CB500C9ACFEF203A0A9 /* AppBlockerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBlockerService.swift; sourceTree = "<group>"; };
+		F6A5A92D6E53E2B0911AA878 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F6FEF128130FF1244ED80178 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F9E24B02FECCED9B2CD06369 /* FocusSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSession.swift; sourceTree = "<group>"; };
+		FDECB2DEDA62926FB18F81E6 /* AppMonitorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMonitorService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F7C844021D3B94E77AB59398 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				758AE2CB268B0403F749CAE3 /* FirebaseAuth in Frameworks */,
+				D71588679C3AA412E1E21E0D /* FirebaseFirestore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1622AC6488E2ACCBD2A24F9B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				D64696F76C9A461E5CCE4FBA /* LoginView.swift */,
+				C8E4721BC3526659C74F425A /* SignUpView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		1BE92426A6C96871F4966317 = {
+			isa = PBXGroup;
+			children = (
+				C58A1AE0AEEE4898236041EB /* Neuro */,
+				6B311C873B633D0311D89907 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		227E6159E23DB70B6FFB475F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C5F23DB26D8030CFEC761C70 /* BlockedAppsView.swift */,
+				678F4F922573D7EA5C01B01A /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		266B6DF7206E111E37E87211 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D6C0780A7EF5A46CF8D245C2 /* project.yml */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		47F918AAC32C0ED4D154D9A6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F6FEF128130FF1244ED80178 /* Constants.swift */,
+				F6A5A92D6E53E2B0911AA878 /* Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4873A6B9053B9ED278160196 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DFA39CB500C9ACFEF203A0A9 /* AppBlockerService.swift */,
+				FDECB2DEDA62926FB18F81E6 /* AppMonitorService.swift */,
+				80A059A52BF81F513E0F1EF4 /* FirebaseService.swift */,
+				79612E3964B2436759373021 /* FocusScoreService.swift */,
+				C0BE8E40EFCC96D3014146CA /* NotificationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6B311C873B633D0311D89907 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A0D25A88BC74799477AB68A /* Neuro.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		77F10F7501DF58ED631A2DF6 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				5A0600BFB5307CA0089B3E1C /* FriendsListView.swift */,
+			);
+			path = Social;
+			sourceTree = "<group>";
+		};
+		7A57EB7D49CAB7AEAF19A5AA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1622AC6488E2ACCBD2A24F9B /* Auth */,
+				D2549CC1BFA23962DEE54859 /* MenuBar */,
+				7BC96166B28F513C2F6F2C90 /* Session */,
+				227E6159E23DB70B6FFB475F /* Settings */,
+				77F10F7501DF58ED631A2DF6 /* Social */,
+				87329BFF9DE14758FF849A7A /* Stats */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7BC96166B28F513C2F6F2C90 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				88770145A23B148A1597416B /* SessionSetupView.swift */,
+				CD4D2A1CB04ABD9DF22C03E4 /* SessionSummaryView.swift */,
+				A021300ED07A54F5A4DEEBAE /* SessionView.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		87329BFF9DE14758FF849A7A /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				900F38F32B429F2FC3BB95B4 /* StatsView.swift */,
+				570C8AC05BCE9660AF972DA9 /* StreakView.swift */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
+		C58A1AE0AEEE4898236041EB /* Neuro */ = {
+			isa = PBXGroup;
+			children = (
+				26E38ECD61A5E86B5DD3338F /* Info.plist */,
+				CE73B7EF4B3911DB7EBB3133 /* Neuro.entitlements */,
+				C318C64FE1A7CD765229E307 /* NeuroApp.swift */,
+				E927BB41C6431B1935AEAED2 /* Models */,
+				266B6DF7206E111E37E87211 /* Resources */,
+				4873A6B9053B9ED278160196 /* Services */,
+				47F918AAC32C0ED4D154D9A6 /* Utilities */,
+				DA0C13DA9C355FD1680D3848 /* ViewModels */,
+				7A57EB7D49CAB7AEAF19A5AA /* Views */,
+			);
+			path = Neuro;
+			sourceTree = "<group>";
+		};
+		D2549CC1BFA23962DEE54859 /* MenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				D398157F5A2E0EF32272068D /* CompactTimerView.swift */,
+				9ACBEF1A90AAEA0C70ECF70B /* MenuBarView.swift */,
+			);
+			path = MenuBar;
+			sourceTree = "<group>";
+		};
+		DA0C13DA9C355FD1680D3848 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D419FDC8F8C7F1CE6234FD31 /* AuthViewModel.swift */,
+				A0E0856F801B8DD5333E7778 /* SessionViewModel.swift */,
+				3777E61A63C57118089697AF /* SettingsViewModel.swift */,
+				21B30315AF5B4E7BA3F4C2C7 /* SocialViewModel.swift */,
+				A8BD010D7FBC4FC0DDA0A013 /* StatsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E927BB41C6431B1935AEAED2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B797E8AB2C5217A699E9A2B4 /* AppUsageRecord.swift */,
+				95B9B1C90856D510D62E832E /* BlockedApp.swift */,
+				F9E24B02FECCED9B2CD06369 /* FocusSession.swift */,
+				D51DF7CEC5D5CF73BECEEFF7 /* Friend.swift */,
+				8C2B894881F653B4A792712D /* UserProfile.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1AAF05B88B65E8156AAAFB03 /* Neuro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05A03F15A78C624EE04A99CC /* Build configuration list for PBXNativeTarget "Neuro" */;
+			buildPhases = (
+				2508DDDC2557B9F137EA3625 /* Sources */,
+				9B3274B11851009E5C98D71B /* Resources */,
+				F7C844021D3B94E77AB59398 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Neuro;
+			packageProductDependencies = (
+				144BA9DC785CA0493CDC4E73 /* FirebaseAuth */,
+				120D53C676FB5DCA5313F7A7 /* FirebaseFirestore */,
+			);
+			productName = Neuro;
+			productReference = 5A0D25A88BC74799477AB68A /* Neuro.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27E7598CC2DEE00062D1D857 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 979F186988098419339027C8 /* Build configuration list for PBXProject "Neuro" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 1BE92426A6C96871F4966317;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2C13EC3800108737DECD3120 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6B311C873B633D0311D89907 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1AAF05B88B65E8156AAAFB03 /* Neuro */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9B3274B11851009E5C98D71B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AE491B6D484B1ED86EA6A0D /* project.yml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2508DDDC2557B9F137EA3625 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9DDA6C321CD608F9AF95E86 /* AppBlockerService.swift in Sources */,
+				D317DA23EEBEF042D672752F /* AppMonitorService.swift in Sources */,
+				6C68D5D0ECEBE08984046A0F /* AppUsageRecord.swift in Sources */,
+				A24C2FA6386B3B04E6C5074A /* AuthViewModel.swift in Sources */,
+				9552F6A8D800FF1D1119ABB4 /* BlockedApp.swift in Sources */,
+				A01F73E3C1A530680B1A9097 /* BlockedAppsView.swift in Sources */,
+				E2CD43F1553A2635AA409F09 /* CompactTimerView.swift in Sources */,
+				1AB5E48D167FBE9B6C78CCA8 /* Constants.swift in Sources */,
+				2FB6D7854BCBBD04C4E1D7DA /* Extensions.swift in Sources */,
+				150B571278C96AD386193E09 /* FirebaseService.swift in Sources */,
+				4C2B2D95346D4DFC48ADFCAB /* FocusScoreService.swift in Sources */,
+				BD1FFC59110A0F55287CCBA7 /* FocusSession.swift in Sources */,
+				5B3520108E112B32F12C24EA /* Friend.swift in Sources */,
+				E290BEA00F832A53C0AE2E7E /* FriendsListView.swift in Sources */,
+				BD8EDC72BC4BBDEDEC470394 /* LoginView.swift in Sources */,
+				9EF5AF3954E94B8A99AEA6EE /* MenuBarView.swift in Sources */,
+				A182263B648AA782D694AC93 /* NeuroApp.swift in Sources */,
+				2DBF26D6B2DAA8E5928C526A /* NotificationService.swift in Sources */,
+				3641D8B7AE62E7858D56903C /* SessionSetupView.swift in Sources */,
+				D32695D9BD7E76C082B47A95 /* SessionSummaryView.swift in Sources */,
+				C4E581825283ABE66FD3238F /* SessionView.swift in Sources */,
+				36C58D0DCAA14DF28EBBCCEB /* SessionViewModel.swift in Sources */,
+				ECE076F251A26461C5A0C851 /* SettingsView.swift in Sources */,
+				A16BC037453DE7E048D25EE3 /* SettingsViewModel.swift in Sources */,
+				01C48934C2D733D908F27937 /* SignUpView.swift in Sources */,
+				5679CA3A0742001DBA463200 /* SocialViewModel.swift in Sources */,
+				A041E1C4B08FB8A8D87069DE /* StatsView.swift in Sources */,
+				75A7BEA4CCDF3E2D9AE88055 /* StatsViewModel.swift in Sources */,
+				5009E66945886D9B1E8328E2 /* StreakView.swift in Sources */,
+				793F583A6BCCBA51B107549D /* UserProfile.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		007D73AB0380CBD984CBDF52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		0D45AE2748CEBB370F5C93A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Neuro/Neuro.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Neuro/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LS_UI_ELEMENT = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.neuro.app;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		654D677208ED0049584A6066 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		B177B6A7100BE75430B78B51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Neuro/Neuro.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Neuro/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LS_UI_ELEMENT = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.neuro.app;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05A03F15A78C624EE04A99CC /* Build configuration list for PBXNativeTarget "Neuro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B177B6A7100BE75430B78B51 /* Debug */,
+				0D45AE2748CEBB370F5C93A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		979F186988098419339027C8 /* Build configuration list for PBXProject "Neuro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				007D73AB0380CBD984CBDF52 /* Debug */,
+				654D677208ED0049584A6066 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2C13EC3800108737DECD3120 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		120D53C676FB5DCA5313F7A7 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C13EC3800108737DECD3120 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		144BA9DC785CA0493CDC4E73 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C13EC3800108737DECD3120 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 27E7598CC2DEE00062D1D857 /* Project object */;
+}

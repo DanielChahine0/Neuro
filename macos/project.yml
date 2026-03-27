@@ -1,0 +1,35 @@
+name: Neuro
+options:
+  bundleIdPrefix: com.neuro
+  deploymentTarget:
+    macOS: "14.0"
+  xcodeVersion: "15.0"
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+
+targets:
+  Neuro:
+    type: application
+    platform: macOS
+    sources:
+      - path: Neuro
+    settings:
+      base:
+        INFOPLIST_FILE: Neuro/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Neuro/Neuro.entitlements
+        LS_UI_ELEMENT: true
+        PRODUCT_BUNDLE_IDENTIFIER: com.neuro.app
+    dependencies:
+      - package: firebase-ios-sdk
+        products:
+          - FirebaseAuth
+          - FirebaseFirestore
+
+packages:
+  firebase-ios-sdk:
+    url: https://github.com/firebase/firebase-ios-sdk.git
+    from: "11.0.0"
