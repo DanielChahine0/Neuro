@@ -13,7 +13,7 @@ const stagger = {
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
 };
 
 export default function Hero() {
@@ -194,7 +194,7 @@ export default function Hero() {
               </div>
               {/* Activity bar */}
               <div className="mt-8 flex gap-[3px]">
-                {Array.from({ length: 48 }).map((_, i) => (
+                {[20,26,31,29,23,17,16,20,26,31,29,23,17,16,20,26,31,29,23,17,16,20,26,31,29,23,17,16,20,26,31,29,23,17,16,20,26,31,29,23,17,16,20,26,31,29,23,17].map((h, i) => (
                   <div
                     key={i}
                     className={`flex-1 rounded-[2px] transition-colors ${
@@ -202,7 +202,7 @@ export default function Hero() {
                         ? "bg-red-500/40"
                         : "bg-accent/30"
                     }`}
-                    style={{ height: `${20 + Math.sin(i * 0.5) * 12}px` }}
+                    style={{ height: `${h}px` }}
                   />
                 ))}
               </div>
