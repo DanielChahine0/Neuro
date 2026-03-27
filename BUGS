@@ -1,0 +1,26 @@
+Known Bugs — Neuro
+==================
+
+This file tracks confirmed bugs that are pending a fix. For reporting new bugs,
+please open a GitHub issue using the Bug Report template.
+
+  https://github.com/danielchahine/neuro/issues/new?template=bug_report.md
+
+
+WEBSITE (marketing site)
+-------------------------
+  None currently known.
+
+
+macOS APP
+---------
+  The macOS app is not yet released. Bug tracking will begin during beta.
+
+
+FIREBASE BACKEND
+----------------
+  Backend is not yet implemented. Bug tracking will begin once development starts.
+
+
+---
+Last updated: 2026-03-27
