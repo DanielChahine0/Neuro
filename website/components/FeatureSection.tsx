@@ -10,7 +10,7 @@ interface Feature {
 
 function WindowChrome() {
   return (
-    <div className="flex items-center gap-2 px-4 py-2.5 border-b border-border">
+    <div className="flex items-center gap-2 px-4 py-2.5 border-b border-border bg-surface-raised">
       <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
       <div className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
       <div className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
@@ -25,7 +25,7 @@ function WorkSessionMockup() {
       <div className="p-6">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <p className="text-xs text-muted font-mono uppercase tracking-wider">
+            <p className="text-xs text-muted font-mono uppercase tracking-widest">
               Active Session
             </p>
             <p className="text-3xl font-bold font-mono tabular-nums mt-1">
@@ -48,7 +48,7 @@ function WorkSessionMockup() {
             <span className="text-muted">Started</span>
             <span className="font-mono text-muted">9:30 AM</span>
           </div>
-          <div className="w-full h-2 rounded-full bg-border mt-3 overflow-hidden">
+          <div className="w-full h-1.5 rounded-full bg-border mt-3 overflow-hidden">
             <div className="h-full w-3/4 rounded-full bg-accent" />
           </div>
           <p className="text-xs text-muted">75% of 3h goal</p>
@@ -60,16 +60,40 @@ function WorkSessionMockup() {
 
 function DistractionMockup() {
   const items = [
-    { app: "Twitter / X", icon: "𝕏", time: "4m 32s", color: "text-red-400", barWidth: "75%" },
-    { app: "YouTube", icon: "▶", time: "2m 18s", color: "text-red-400", barWidth: "45%" },
-    { app: "Slack", icon: "◆", time: "1m 45s", color: "text-yellow-400", barWidth: "30%" },
-    { app: "Mail", icon: "✉", time: "0m 52s", color: "text-yellow-400", barWidth: "15%" },
+    {
+      app: "Twitter / X",
+      icon: "𝕏",
+      time: "4m 32s",
+      color: "text-red-400",
+      barWidth: "75%",
+    },
+    {
+      app: "YouTube",
+      icon: "▶",
+      time: "2m 18s",
+      color: "text-red-400",
+      barWidth: "45%",
+    },
+    {
+      app: "Slack",
+      icon: "◆",
+      time: "1m 45s",
+      color: "text-yellow-400",
+      barWidth: "30%",
+    },
+    {
+      app: "Mail",
+      icon: "✉",
+      time: "0m 52s",
+      color: "text-yellow-400",
+      barWidth: "15%",
+    },
   ];
   return (
     <div className="rounded-xl bg-surface border border-border overflow-hidden">
       <WindowChrome />
       <div className="p-6">
-        <p className="text-xs text-muted font-mono uppercase tracking-wider mb-4">
+        <p className="text-xs text-muted font-mono uppercase tracking-widest mb-4">
           Distractions Today
         </p>
         <div className="space-y-3">
@@ -84,7 +108,9 @@ function DistractionMockup() {
               />
               <div className="relative flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <span className="text-sm w-5 text-center text-muted">{item.icon}</span>
+                  <span className="text-sm w-5 text-center text-muted">
+                    {item.icon}
+                  </span>
                   <span className="text-sm font-medium">{item.app}</span>
                 </div>
                 <span className={`text-sm font-mono ${item.color}`}>
@@ -116,7 +142,7 @@ function AppBlockingMockup() {
     <div className="rounded-xl bg-surface border border-border overflow-hidden">
       <WindowChrome />
       <div className="p-6">
-        <p className="text-xs text-muted font-mono uppercase tracking-wider mb-4">
+        <p className="text-xs text-muted font-mono uppercase tracking-widest mb-4">
           Blocked Apps
         </p>
         <div className="space-y-2">
@@ -163,14 +189,11 @@ function FocusScoreMockup() {
     <div className="rounded-xl bg-surface border border-border overflow-hidden">
       <WindowChrome />
       <div className="p-6 flex flex-col items-center">
-        <p className="text-xs text-muted font-mono uppercase tracking-wider mb-6">
+        <p className="text-xs text-muted font-mono uppercase tracking-widest mb-6">
           Focus Score
         </p>
         <div className="relative w-36 h-36">
-          <svg
-            className="w-full h-full -rotate-90"
-            viewBox="0 0 120 120"
-          >
+          <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
             <circle
               cx="60"
               cy="60"
@@ -221,13 +244,13 @@ function StatsMockup() {
       <div className="p-6">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <p className="text-xs text-muted font-mono uppercase tracking-wider">
+            <p className="text-xs text-muted font-mono uppercase tracking-widest">
               This Week
             </p>
             <p className="text-2xl font-bold mt-1">18h 24m</p>
           </div>
           <div className="text-right">
-            <p className="text-xs text-muted font-mono uppercase tracking-wider">
+            <p className="text-xs text-muted font-mono uppercase tracking-widest">
               Streak
             </p>
             <p className="text-2xl font-bold text-orange-400 mt-1 flex items-center gap-1 justify-end">
@@ -244,17 +267,12 @@ function StatsMockup() {
         </div>
         <div className="flex items-end gap-2 h-28">
           {days.map((day, i) => (
-            <div
-              key={day + i}
-              className="flex-1 flex flex-col items-center gap-1.5"
-            >
+            <div key={day + i} className="flex-1 flex flex-col items-center gap-1.5">
               <div
                 className="w-full rounded-md bg-accent/30"
                 style={{ height: `${heights[i]}%` }}
               />
-              <span className="text-[10px] text-muted font-mono">
-                {day}
-              </span>
+              <span className="text-[10px] text-muted font-mono">{day}</span>
             </div>
           ))}
         </div>
@@ -283,7 +301,7 @@ function SocialMockup() {
     <div className="rounded-xl bg-surface border border-border overflow-hidden">
       <WindowChrome />
       <div className="p-6">
-        <p className="text-xs text-muted font-mono uppercase tracking-wider mb-4">
+        <p className="text-xs text-muted font-mono uppercase tracking-widest mb-4">
           Activity Feed
         </p>
         <div className="space-y-3">
@@ -361,13 +379,20 @@ const features: Feature[] = [
 export default function FeatureSection() {
   return (
     <section id="features" className="relative py-32 px-6">
+      {/* Decorative top line */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-24">
+          <p className="text-xs text-accent font-mono uppercase tracking-widest mb-3">
+            Everything you need
+          </p>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
             Features
           </h2>
           <p className="mt-4 text-muted max-w-lg mx-auto">
-            Everything you need to stay on task, understand your habits, and actually get better.
+            Everything you need to stay on task, understand your habits, and
+            actually get better.
           </p>
         </div>
 
@@ -378,13 +403,17 @@ export default function FeatureSection() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
               className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center"
-              style={{
-                direction: index % 2 === 1 ? "rtl" : "ltr",
-              }}
+              style={{ direction: index % 2 === 1 ? "rtl" : "ltr" }}
             >
-              <div style={{ direction: "ltr" }} className="flex flex-col">
+              <div
+                style={{ direction: "ltr" }}
+                className="flex flex-col"
+              >
+                <p className="text-xs font-mono text-muted/30 tracking-widest uppercase mb-3">
+                  {String(index + 1).padStart(2, "0")} —
+                </p>
                 <h3 className="text-2xl sm:text-3xl font-bold tracking-tight">
                   {feature.title}
                 </h3>
@@ -392,7 +421,14 @@ export default function FeatureSection() {
                   {feature.description}
                 </p>
               </div>
-              <div style={{ direction: "ltr" }}>{feature.mockup}</div>
+              <div style={{ direction: "ltr" }} className="group/mockup relative">
+                <div className="absolute -inset-3 rounded-2xl opacity-0 group-hover/mockup:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  style={{
+                    background: "radial-gradient(ellipse at 50% 50%, rgba(99,102,241,0.06) 0%, transparent 70%)",
+                  }}
+                />
+                {feature.mockup}
+              </div>
             </motion.div>
           ))}
         </div>

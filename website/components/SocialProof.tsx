@@ -70,7 +70,7 @@ const testimonials = [
 export default function SocialProof() {
   return (
     <section className="relative py-32 px-6 overflow-hidden">
-      {/* Decorative line */}
+      {/* Decorative top line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       <div className="max-w-6xl mx-auto">
@@ -107,7 +107,7 @@ export default function SocialProof() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <p className="text-sm text-accent font-mono uppercase tracking-wider mb-3">
+          <p className="text-xs text-accent font-mono uppercase tracking-widest mb-3">
             Testimonials
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
@@ -126,7 +126,7 @@ export default function SocialProof() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 + 0.2, duration: 0.5 }}
-              className="group relative p-6 rounded-2xl bg-surface border border-border hover:border-border-hover transition-all duration-300"
+              className="group relative p-6 rounded-2xl bg-surface border border-border hover:border-border-hover transition-all duration-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
             >
               {/* Hover glow */}
               <div className="absolute -inset-px rounded-2xl bg-gradient-to-b from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />

@@ -83,9 +83,12 @@ export default function Pricing() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center mb-16"
           >
+            <p className="text-xs text-accent font-mono uppercase tracking-widest mb-3">
+              Pricing
+            </p>
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
               Free during beta
             </h1>
@@ -96,19 +99,29 @@ export default function Pricing() {
           </motion.div>
 
           {/* Plans */}
-          <div className="grid md:grid-cols-3 gap-6 mb-24">
+          <div className="grid md:grid-cols-3 gap-5 mb-24">
             {plans.map((plan, i) => (
               <motion.div
                 key={plan.name}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 + 0.2, duration: 0.5 }}
+                transition={{
+                  delay: i * 0.1 + 0.2,
+                  duration: 0.6,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
                 className={`relative rounded-2xl p-6 border ${
                   plan.highlighted
-                    ? "bg-surface border-accent/30"
+                    ? "bg-surface border-accent/40 shadow-[0_0_0_1px_rgba(99,102,241,0.15),0_0_40px_rgba(99,102,241,0.1)]"
                     : "bg-surface border-border hover:border-border-hover transition-colors"
                 }`}
               >
+                {plan.highlighted && (
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3.5 py-1 rounded-full bg-accent text-white text-xs font-medium whitespace-nowrap">
+                    Most popular
+                  </div>
+                )}
+
                 <div className="mb-6">
                   <p className="text-sm font-medium text-muted mb-2">
                     {plan.name}
@@ -119,9 +132,7 @@ export default function Pricing() {
                     </span>
                     <span className="text-sm text-muted">{plan.period}</span>
                   </div>
-                  <p className="mt-2 text-sm text-muted">
-                    {plan.description}
-                  </p>
+                  <p className="mt-2 text-sm text-muted">{plan.description}</p>
                 </div>
 
                 <ul className="space-y-3 mb-8">
@@ -152,9 +163,9 @@ export default function Pricing() {
 
                 <a
                   href="#"
-                  className={`block text-center py-3 px-4 rounded-xl text-sm font-medium transition-colors ${
+                  className={`block text-center py-3 px-4 rounded-xl text-sm font-medium transition-all duration-200 ${
                     plan.highlighted
-                      ? "bg-accent text-white hover:bg-accent-hover"
+                      ? "bg-accent text-white hover:bg-accent-hover hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]"
                       : "border border-border hover:border-border-hover text-foreground"
                   }`}
                 >
@@ -169,19 +180,20 @@ export default function Pricing() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
             className="max-w-2xl mx-auto"
           >
+            <p className="text-xs text-accent font-mono uppercase tracking-widest mb-3 text-center">
+              FAQ
+            </p>
             <h2 className="text-2xl font-bold tracking-tight text-center mb-10">
               Frequently asked questions
             </h2>
-            <div className="space-y-6">
+            <div className="space-y-0 divide-y divide-border">
               {faqs.map((faq) => (
-                <div key={faq.q} className="pb-6 border-b border-border last:border-0">
-                  <p className="text-sm font-medium mb-2">{faq.q}</p>
-                  <p className="text-sm text-muted leading-relaxed">
-                    {faq.a}
-                  </p>
+                <div key={faq.q} className="py-6">
+                  <p className="text-sm font-semibold mb-2">{faq.q}</p>
+                  <p className="text-sm text-muted leading-relaxed">{faq.a}</p>
                 </div>
               ))}
             </div>

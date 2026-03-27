@@ -32,16 +32,18 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border/50"
+          ? "bg-background/85 backdrop-blur-xl border-b border-border/40 shadow-[0_1px_0_rgba(255,255,255,0.03)]"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5">
-          <div className="w-7 h-7 rounded-lg bg-accent flex items-center justify-center">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <div className="w-7 h-7 rounded-lg bg-accent flex items-center justify-center transition-shadow duration-200 group-hover:shadow-[0_0_14px_rgba(99,102,241,0.5)]">
+            {/* Neural oscillation / brain wave icon */}
             <svg
-              width="16"
-              height="16"
+              width="15"
+              height="15"
               viewBox="0 0 24 24"
               fill="none"
               stroke="white"
@@ -49,7 +51,7 @@ export default function Navbar() {
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <path d="M12 2a10 10 0 1 0 10 10H12V2z" />
+              <polyline points="2,12 5,12 7,7 9,17 11,10 13,14 15,12 22,12" />
             </svg>
           </div>
           <span className="text-lg font-semibold tracking-tight">Neuro</span>
@@ -61,14 +63,15 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className="text-sm text-muted hover:text-foreground transition-colors"
+              className="relative text-sm text-muted hover:text-foreground transition-colors duration-200 group"
             >
               {link.label}
+              <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-foreground/25 transition-all duration-200 group-hover:w-full" />
             </Link>
           ))}
           <Link
             href="#"
-            className="text-sm px-4 py-1.5 rounded-lg border border-border hover:border-border-hover text-muted hover:text-foreground transition-colors"
+            className="text-sm px-4 py-1.5 rounded-lg border border-border hover:border-border-hover text-muted hover:text-foreground transition-all duration-200"
           >
             Sign In
           </Link>
@@ -81,25 +84,17 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           <motion.span
-            animate={{
-              rotate: mobileOpen ? 45 : 0,
-              y: mobileOpen ? 0 : -4,
-            }}
+            animate={{ rotate: mobileOpen ? 45 : 0, y: mobileOpen ? 0 : -4 }}
             transition={{ duration: 0.2 }}
             className="absolute block h-px w-5 bg-foreground"
           />
           <motion.span
-            animate={{
-              opacity: mobileOpen ? 0 : 1,
-            }}
+            animate={{ opacity: mobileOpen ? 0 : 1 }}
             transition={{ duration: 0.15 }}
             className="absolute block h-px w-5 bg-foreground"
           />
           <motion.span
-            animate={{
-              rotate: mobileOpen ? -45 : 0,
-              y: mobileOpen ? 0 : 4,
-            }}
+            animate={{ rotate: mobileOpen ? -45 : 0, y: mobileOpen ? 0 : 4 }}
             transition={{ duration: 0.2 }}
             className="absolute block h-px w-5 bg-foreground"
           />
