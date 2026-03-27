@@ -45,7 +45,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Feature section with interactive app UI mockups (sessions, blocking, score, stats, social)
 - Social proof section
 - Pricing page
-- Dark-themed design system with indigo accent (`#6366f1`) and Geist fonts
+- Dark-themed design system with indigo accent (#6366f1) and Geist fonts
 
 ---
 
