@@ -100,11 +100,11 @@ export default function Hero() {
                 </div>
               </div>
               {/* Activity bar */}
-              <div className="mt-8 flex gap-[3px]">
+              <div className="mt-8 flex gap-0.75">
                 {[20,26,31,29,23,17,16,20,26,31,29,23,17,16,20,26,31,29,23,17,16,20,26,31,29,23,17,16,20,26,31,29,23,17,16,20,26,31,29,23,17,16,20,26,31,29,23,17].map((h, i) => (
                   <div
                     key={i}
-                    className={`flex-1 rounded-[2px] ${
+                    className={`flex-1 rounded-xs ${
                       [7, 8, 23, 24, 25, 38].includes(i)
                         ? "bg-red-500/40"
                         : "bg-accent/30"
@@ -124,7 +124,7 @@ export default function Hero() {
         </div>
 
         {/* Fade out at the bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-background to-transparent pointer-events-none" />
       </motion.div>
     </section>
   );
