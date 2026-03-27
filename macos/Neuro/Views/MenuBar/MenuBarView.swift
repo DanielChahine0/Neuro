@@ -50,11 +50,11 @@ struct MenuBarView: View {
                         QuickStartView()
                     }
                 case .stats:
-                    statsPlaceholder
+                    StatsView(viewModel: statsVM)
                 case .social:
-                    socialPlaceholder
+                    FriendsListView()
                 case .profile:
-                    profilePlaceholder
+                    profileView
                 }
             }
             .frame(maxHeight: .infinity)
@@ -123,51 +123,58 @@ struct MenuBarView: View {
         .padding(.bottom, 4)
     }
 
-    // MARK: - Placeholder Tabs
+    // MARK: - Profile Tab
 
-    private var statsPlaceholder: some View {
-        VStack(spacing: 12) {
-            Image(systemName: "chart.bar.fill")
-                .font(.system(size: 32))
-                .foregroundStyle(Color.neuroMuted)
-            Text("Stats")
-                .font(.headline)
-                .foregroundStyle(.white)
-            Text("Coming soon")
-                .font(.caption)
-                .foregroundStyle(Color.neuroMuted)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
+    @Environment(AuthViewModel.self) private var authVM
 
-    private var socialPlaceholder: some View {
-        VStack(spacing: 12) {
-            Image(systemName: "person.2.fill")
-                .font(.system(size: 32))
-                .foregroundStyle(Color.neuroMuted)
-            Text("Social")
-                .font(.headline)
-                .foregroundStyle(.white)
-            Text("Coming soon")
-                .font(.caption)
-                .foregroundStyle(Color.neuroMuted)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
+    private var profileView: some View {
+        Group {
+            if authVM.isAuthenticated {
+                VStack(spacing: 16) {
+                    // Avatar
+                    ZStack {
+                        Circle()
+                            .fill(Color.neuroAccent.opacity(0.2))
+                            .frame(width: 56, height: 56)
 
-    private var profilePlaceholder: some View {
-        VStack(spacing: 12) {
-            Image(systemName: "person.crop.circle.fill")
-                .font(.system(size: 32))
-                .foregroundStyle(Color.neuroMuted)
-            Text("Profile")
-                .font(.headline)
-                .foregroundStyle(.white)
-            Text("Coming soon")
-                .font(.caption)
-                .foregroundStyle(Color.neuroMuted)
+                        Text(String((authVM.currentUser?.displayName ?? authVM.currentUser?.email ?? "?").prefix(1)).uppercased())
+                            .font(.system(size: 22, weight: .bold))
+                            .foregroundStyle(Color.neuroAccent)
+                    }
+
+                    VStack(spacing: 4) {
+                        Text(authVM.currentUser?.displayName ?? "")
+                            .font(.system(size: 15, weight: .semibold))
+                            .foregroundStyle(.white)
+                        Text(authVM.currentUser?.email ?? "")
+                            .font(.system(size: 12))
+                            .foregroundStyle(Color.neuroMuted)
+                    }
+
+                    StreakView(
+                        currentStreak: statsVM.currentStreak,
+                        longestStreak: statsVM.longestStreak,
+                        weeklyActivity: []
+                    )
+                    .padding(.horizontal, 16)
+
+                    Button {
+                        authVM.signOut()
+                    } label: {
+                        Text("Sign Out")
+                            .font(.system(size: 13, weight: .medium))
+                            .foregroundStyle(Color.neuroDanger)
+                    }
+                    .buttonStyle(.plain)
+
+                    Spacer()
+                }
+                .padding(.top, 24)
+            } else {
+                LoginView()
+                    .padding(16)
+            }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
@@ -479,18 +486,22 @@ private struct ActiveSessionView: View {
                 .foregroundStyle(Color.neuroMuted)
                 .textCase(.uppercase)
 
-            ForEach(sessionVM.recentDistractions.prefix(3), id: \.self) { app in
+            ForEach(Array(sessionVM.recentDistractions.prefix(3).enumerated()), id: \.offset) { _, distraction in
                 HStack(spacing: 8) {
                     Image(systemName: "exclamationmark.triangle.fill")
                         .font(.system(size: 10))
                         .foregroundStyle(Color.neuroWarning)
 
-                    Text(app)
+                    Text(distraction.app)
                         .font(.system(size: 12))
                         .foregroundStyle(.white)
                         .lineLimit(1)
 
                     Spacer()
+
+                    Text(distraction.duration.formatted())
+                        .font(.system(size: 10, design: .monospaced))
+                        .foregroundStyle(Color.neuroMuted)
                 }
             }
         }

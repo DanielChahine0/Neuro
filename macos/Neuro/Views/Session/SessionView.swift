@@ -213,9 +213,8 @@ struct SessionView: View {
                 .background(Color.neuroSurface, in: RoundedRectangle(cornerRadius: 10))
             } else {
                 VStack(spacing: 0) {
-                    ForEach(Array(sessionVM.recentDistractions.enumerated()), id: \.offset) { index, app in
+                    ForEach(Array(sessionVM.recentDistractions.enumerated()), id: \.offset) { index, distraction in
                         HStack(spacing: 10) {
-                            // Timeline dot and line
                             VStack(spacing: 0) {
                                 Circle()
                                     .fill(Color.neuroDanger)
@@ -230,18 +229,21 @@ struct SessionView: View {
                             }
                             .frame(width: 8)
 
-                            // App info
                             HStack {
                                 Image(systemName: "exclamationmark.triangle.fill")
                                     .font(.system(size: 10))
                                     .foregroundStyle(Color.neuroWarning)
 
-                                Text(app)
+                                Text(distraction.app)
                                     .font(.system(size: 12, weight: .medium))
                                     .foregroundStyle(.white)
                                     .lineLimit(1)
 
                                 Spacer()
+
+                                Text(distraction.duration.formatted())
+                                    .font(.system(size: 10, design: .monospaced))
+                                    .foregroundStyle(Color.neuroMuted)
                             }
                             .padding(.vertical, 8)
                         }
