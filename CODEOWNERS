@@ -1,0 +1,12 @@
+# CODEOWNERS
+# Each line is a file pattern followed by one or more owners.
+# Order matters — the last matching pattern takes precedence.
+
+# Default owner for everything
+* @danielchahine
+
+# Website / marketing site
+/website/ @danielchahine
+
+# GitHub configuration and workflows
+/.github/ @danielchahine
